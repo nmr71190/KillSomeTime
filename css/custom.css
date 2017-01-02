@@ -1,15 +1,16 @@
 body {
-	
+	background-image: url(images/arc2.jpg);
     padding-top: 50px;
-	color:rebeccapurple;
+	color: #01FF70;
 	}
 	
 h1, h2, h3, h4, h5, h6 {
-	color: rebeccapurple;
+	color: #01FF70
+;
 	}
 	
 .feature {
-	background-image: url(../images/arc1.jpg);
+	background-color: rebeccapurple;
 	color: black;
 	}
 
@@ -36,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     }
  
 .small-print {
-	background-color: midnightblue;
+	background-image: url(images/arc1.jpg);
 	padding: 30px 0;
 }
 

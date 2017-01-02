@@ -13,8 +13,54 @@
 
     
     <link href="css/custom.css" rel="stylesheet">
+  <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
 
-   
+    <script type="text/javascript"> 
+    
+    $(window).load (function(){
+var hash = window.location.hash.substring(1);
+$.ajax({
+    url: 'killsometime.json',
+    type: 'get',
+    dataType: 'json',
+    error: function(data){
+        console.log(data);
+    },
+    success: function(data){
+        $.each(data, function(index, value) {
+            //console.log(index);
+            //console.log(value);
+            //console.log(Object.keys(value));
+            jsonid = value.id;
+            jsontitle = value.title;
+            jsoniframe = value.iframe;
+            jsonauthor = value.author;
+            jsonauthorlink = value.authorlink;
+            jsondescrip = value.descrip;
+        if (hash == jsonid ) {
+            alert("hi");
+
+            $("#arcade").append(`<h1>`+jsontitle+`</h1>
+                `+jsoniframe+`
+                <div class="container">
+            <div class="jumbotron" style="background-color: #111111">
+                <p><a href="`+jsonauthorlink+`">`+jsonauthor+`</a></h3>
+                <p>`+jsondescrip+`</p>
+                </div>`);
+
+
+            
+
+        }
+
+        });
+    }
+});
+});
+</script>
+
+
 </head>
 
 <body>
@@ -47,16 +93,16 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="play1.html">Action</a>
+                        <a href="play.html">Action</a>
                     </li>
                     <li>
-                        <a href="play2.html">Adventure</a>
+                        <a href="play.html">Adventure</a>
                     </li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="about-us">
-							<li><a href="play3.html">Puzzle</a></li>
-							<li><a href="play4.html">RPG</a></li>
+							<li><a href="play.html">Puzzle</a></li>
+							<li><a href="play.html">RPG</a></li>
 							<li><a href="signup.html">Sign up</a></li>
 						</ul>
 					</li>
@@ -76,26 +122,11 @@
         <!-- /.container -->
     </nav>
 
-    <p>Hobo With a Shotgun</p>
     
-   <iframe src='http://e.gsrca.de/27652?s=960&mode=embed' width='960' height='672' allowtransparency='true' scrolling='no' style='border:none;' mozallowfullscreen  webkitallowfullscreen allowfullscreen></iframe>
+    <div style="text-align: center; background-image: url(images/arc1.jpg);" id="arcade">
     
-    <p><a href="http://arcade.gamesalad.com/portfolio/GameSalad">GameSalad</a>
-    </p>
-    
-    <p>Take to the streets and exact justice "one shell at a time" in the new game based on the upcoming film HOBO WITH A SHOTGUN (directed by Jason Eisener and distributed by Magnet Releasing). HOBO WITH A SHOTGUN requires iOS 3.0 or higher and is compatible with iPhone 3GS, iPhone 4, 3rd and 4th Generation iPod touch and all models of iPad. Inspired by the classic gameplay of side-scrolling action games from the 80's and 90's, HOBO WITH A SHOTGUN takes you back to the days when there was no "Easy Mode" and games were challenging. Back then, getting past the first level took effort, and you would compare notes with your friends on how to beat bosses and cheap-shot enemies. There's no Game Genie for App Store games to help you cheat! We will be making new levels, bosses, enemies, and features available as free downloads between now and the theatrical release of the film HOBO WITH A SHOTGUN. Keep an eye on our website for details, and keep honing your skills.</p>
         
-    <div class="small-print">
-        	<div class="container">
-        		<p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-        		<p>Copyright &copy; KilSomeTime.com 2015 </p>
-        	</div>
-        </div>
-	</footer>
-
-	
-    <!-- jQuery -->
-    <script src="js/jquery-1.11.3.min.js"></script>
+  
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
