@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Kill Some Time</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="css/custom.css" rel="stylesheet">
+  <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript"> 
+    
+    $(window).load (function(){
+var hash = window.location.hash.substring(1);
+$.ajax({
+    url: 'killsometime.json',
+    type: 'get',
+    dataType: 'json',
+    error: function(data){
+        console.log(data);
+    },
+    success: function(data){
+        $.each(data, function(index, value) {
+            //console.log(index);
+            //console.log(value);
+            //console.log(Object.keys(value));
+            jsonid = value.id;
+            jsontitle = value.title;
+            jsoniframe = value.iframe;
+            jsonauthor = value.author;
+            jsonauthorlink = value.authorlink;
+            jsondescrip = value.descrip;
+        if (hash == jsonid ) {
+            alert("hi");
+
+            $("#arcade").append(`<h1>`+jsontitle+`</h1>
+                `+jsoniframe+`
+                <div class="container">
+            <div class="jumbotron" style="background-color: #111111">
+                <p><a href="`+jsonauthorlink+`">`+jsonauthor+`</a></h3>
+                <p>`+jsondescrip+`</p>
+                </div>`);
+
+
+            
+
+        }
+
+        });
+    }
+});
+});
+</script>
+
+
+</head>
+
+<body>
+    
+    
+    
+    
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                	<span class="glyphicon glyphicon-fire"></span> 
+                	KillSomeTime
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="play.html">Action</a>
+                    </li>
+                    <li>
+                        <a href="play.html">Adventure</a>
+                    </li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+						<ul class="dropdown-menu" aria-labelledby="about-us">
+							<li><a href="play.html">Puzzle</a></li>
+							<li><a href="play.html">RPG</a></li>
+							<li><a href="signup.html">Sign up</a></li>
+						</ul>
+					</li>
+                </ul>
+
+				<!-- Search -->
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    
+    <div style="text-align: center; background-image: url(images/arc1.jpg);" id="arcade">
+    
+        
+  
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- IE10 viewport bug workaround -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	<!-- Placeholder Images -->
+	<script src="js/holder.min.js"></script>
+	
+</body>
+
+</html>
