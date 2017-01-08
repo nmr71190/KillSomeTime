@@ -1,17 +1,18 @@
 body {
-	background-image: url(images/arc2.jpg);
+    background-image: url(../images/arc1.jpg);
     padding-top: 50px;
 	color: #01FF70;
 	}
 	
 h1, h2, h3, h4, h5, h6 {
+    
 	color: #01FF70
+        
 ;
 	}
 	
 .feature {
-	background-color: rebeccapurple;
-	color: black;
+	background: url(images/arc1.jpg);
 	}
 
 #feature-carousel {
@@ -28,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-blurb {
     padding: 30px 0;
-    background-color: rebeccapurple;
+    background-color:rebeccapurple;
     color: white;
 }
     
@@ -37,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     }
  
 .small-print {
-	background-image: url(images/arc1.jpg);
+	background: url(images/arc2.png);
 	padding: 30px 0;
 }
 
